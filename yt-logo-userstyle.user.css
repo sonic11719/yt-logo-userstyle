@@ -1,0 +1,39 @@
+/* ==UserStyle==
+@name           YouTube - bring back old logo
+@description    brings back old memories of the YouTube logo
+@author         nkapila6
+@namespace      https://github.com/nkapila6/yt-logo-userstyle/
+@updateURL      -
+@supportURL     https://github.com/nkapila6/yt-logo-userstyle/issues
+@author         nkapila6
+@match          *://*.youtube.com/*
+@version        1.0.0
+==/UserStyle== */
+
+
+@-moz-document domain("youtube.com") {
+/* Hide the existing logo and country code */
+ytd-topbar-logo-renderer #logo-icon {
+    display: none !important;
+}
+
+#country-code {
+    display: none;
+}
+}
+
+@-moz-document domain("youtube.com") {
+/* Adding the old logo */
+ytd-topbar-logo-renderer #logo::before {
+    content: '';
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    background-image: url('https://raw.githubusercontent.com/nkapila6/yt-logo-userstyle/main/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+}
